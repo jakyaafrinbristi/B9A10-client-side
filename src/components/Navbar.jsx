@@ -1,6 +1,9 @@
+import { useContext } from 'react'
 import logo from '../assets/images/logo.jpg'
+import { AuthContext } from '../provider/AuthProvider'
 
 const Navbar = () => {
+    const {user} =useContext(AuthContext)
     return (
       <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
         <div className='flex-1'>
@@ -24,12 +27,15 @@ const Navbar = () => {
               <div>Register</div>
             </li>
   
-            <li>
+            {!user &&
+            (<li>
               <div>Login</div>
-            </li>
+            </li>)
+            }
           </ul>
   
-          <div className='dropdown dropdown-end z-50'>
+         {user &&
+            ( <div className='dropdown dropdown-end z-50'>
             <div
               tabIndex={0}
               role='button'
@@ -53,7 +59,8 @@ const Navbar = () => {
                 <button className='bg-gray-200 block text-center'>Logout</button>
               </li>
             </ul>
-          </div>
+          </div>)
+         }
         </div>
       </div>
     )
