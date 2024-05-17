@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import logo from '../assets/images/logo.jpg'
 import { AuthContext } from '../provider/AuthProvider'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     const {user} =useContext(AuthContext)
@@ -24,12 +25,12 @@ const Navbar = () => {
               <div>Add Craft Item</div>
             </li>
             <li>
-              <div>Register</div>
+              <Link to= '/register'>Register</Link>
             </li>
   
             {!user &&
             (<li>
-              <div>Login</div>
+              <Link to='/login'>Login</Link>
             </li>)
             }
           </ul>
