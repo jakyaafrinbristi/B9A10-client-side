@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa6";
 
 
 const Register = () => {
@@ -42,6 +43,15 @@ const Register = () => {
     
                 <span className='w-5/6 px-4 py-3 font-bold text-center'>
                   Sign in with Google
+                </span>
+              </div>
+              <div className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
+                <div className='px-4 py-2'>
+                <FaGithub />
+                </div>
+    
+                <span className='w-5/6 px-4 py-3 font-bold text-center'>
+                  Sign in with Github
                 </span>
               </div>
     
