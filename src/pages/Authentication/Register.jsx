@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6"; 
+import register from "../../json/register.json";
+import Lottie from "lottie-react";
+import logo from "../../assets/images/logo.jpg"
 
 
 const Register = () => {
     return (
-        <div className='flex justify-center items-center min-h-[calc(100vh-306px)]'>
+        <div className='flex justify-center items-center min-h-[calc(100vh-306px)] mt-12 gap-6'>
           <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
             <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
               <div className='flex justify-center mx-auto'>
                 <img
                   className='w-auto h-7 sm:h-8'
-                  src='https://merakiui.com/images/logo.svg'
+                  src={logo}
                   alt=''
                 />
               </div>
@@ -154,10 +157,10 @@ const Register = () => {
             </div>
             <div
               className='hidden bg-cover bg-center lg:block lg:w-1/2'
-              style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80')`,
-              }}
-            ></div>
+            
+            >
+                 <Lottie  animationData={register} loop={true} />
+            </div>
           </div>
         </div>
       )

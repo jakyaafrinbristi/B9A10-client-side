@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom"
 import { FaGithub } from "react-icons/fa6";
 import Lottie from "lottie-react";
-import login from "../../../public/login.json"
+// import login from "../../../public/login.json"
+import login from "../../json/login.json";
+import logo from "../../assets/images/logo.jpg"
 
 
 
@@ -21,7 +23,7 @@ const Login = () => {
           <div className='flex justify-center mx-auto'>
             <img
               className='w-auto h-7 sm:h-8'
-              src='https://merakiui.com/images/logo.svg'
+              src={logo}
               alt=''
             />
           </div>
