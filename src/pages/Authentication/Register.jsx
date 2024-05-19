@@ -1,11 +1,51 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa6"; 
 import register from "../../json/register.json";
 import Lottie from "lottie-react";
 import logo from "../../assets/images/logo.jpg"
+import { useContext } from "react";
+import toast from "react-hot-toast";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const Register = () => {
+  const navigate =useNavigate()
+  const {createUser,signInWithGoogle,user,setUser,updateUserProfile}=useContext(AuthContext);
+  // create user
+  const handleSIgnUp = async e =>{
+    e.preventDefault()
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    console.log({name,email,photo,password});
+    try{
+      const result = await createUser(email,password)
+      console.log(result)
+      await updateUserProfile(name,photo)
+      setUser({...user,photoUrl:photo,displayName:name})
+      navigate('/')
+      toast.success('signUp successfully')
+    } catch(error){
+      console.log(error)
+      toast.error('please again signUp')
+
+  }
+
+  }
+    // goggle login
+    const handleGoggleLogin = async() =>{
+      try {
+          await signInWithGoogle()
+          toast.success('signUp successfully')
+          navigate('/')
+      }catch (error) {
+          toast.error('please again signUp')
+  
+  
+   }
+  }
     return (
         <div className='flex justify-center items-center min-h-[calc(100vh-306px)] mt-12 gap-6'>
           <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
@@ -22,7 +62,7 @@ const Register = () => {
                 Get Your Free Account Now.
               </p>
     
-              <div className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
+              <div onClick={handleGoggleLogin} className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
                 <div className='px-4 py-2'>
                   <svg className='w-6 h-6' viewBox='0 0 40 40'>
                     <path
@@ -67,7 +107,7 @@ const Register = () => {
     
                 <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
               </div>
-              <form>
+              <form onSubmit={handleSIgnUp}>
                 <div className='mt-4'>
                   <label
                     className='block mb-2 text-sm font-medium text-gray-600 '

@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+
 import { createContext, useEffect, useState } from 'react'
 import {
   GoogleAuthProvider,
@@ -76,4 +76,4 @@ const AuthProvider = ({ children }) => {
   )
 }
 
-export default AuthProvider
+export default AuthProvider;
