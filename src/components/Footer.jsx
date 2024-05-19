@@ -3,13 +3,13 @@ import logo from '../assets/images/logo.jpg'
 
 const Footer = () => {
     return (
-      <footer className='bg-white shadow-sm mt-10'>
+      <footer className='bg-slate-200 shadow-sm mt-10'>
         <hr />
         <div className='container px-6 py-8 mx-auto'>
           <div className='flex flex-col items-center text-center'>
             <div className='flex gap-2 items-center'>
               <img className='w-auto h-7 rounded-full' src={logo} alt='' />
-              <span className='font-bold'>Art & Craft</span>
+              <span className='font-bold'>DeviantArt</span>
             </div>
   
             <div className='flex flex-wrap justify-center mt-6 -mx-4'>
