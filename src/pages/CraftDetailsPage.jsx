@@ -1,27 +1,32 @@
+import { useLoaderData } from "react-router-dom";
 
 
 const CraftDetailsPage = () => {
+    const card =useLoaderData();
+    console.log(card)
+    const {_id,name,email,item_name,subcategory_Name,price,rating,processing,image,description,customization,stock}= card || {};
     return (
-        <div>
-        <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <img src="" alt="" />
-
-
-    <div className="p-6">
-        <div>
-            <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">Product</span>
-            <a href="#" className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline"  role="link">I Built A Successful Blog In One Year</a>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie parturient et sem ipsum volutpat vel. Natoque sem et aliquam mauris egestas quam volutpat viverra. In pretium nec senectus erat. Et malesuada lobortis.</p>
+        <div className="container px-8 py-10 mx-auto ">
+       <div className="  flex-row lg:flex gap-9">
+       <div className="lg:w-[60%]">
+        <img  src={image} alt="" />
         </div>
+        <div className="lg:w-[40%] space-y-4 mt-20">
+            <p className="text-center text-2xl font-bold ">{subcategory_Name}</p>
+            <hr />
+            <p className="text-center text-2xl font-bold ">{item_name}</p>
+            <p className="text-center text-xl font-semibold">{description}</p>
+            <p>Price:{price}</p>
+            <p>processing:{customization}</p>
+            <p>Stock:{stock}</p>
+            
+       
 
-        <div className="mt-4">
-            <div className="flex items-center">
-           
-                <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">21 SEP 2015</span>
-            </div>
+    
+            
         </div>
-    </div>
-</div>
+       </div>
+
             
         </div>
     );

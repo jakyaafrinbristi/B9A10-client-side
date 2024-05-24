@@ -20,7 +20,8 @@ import CraftDetailsPage from "../pages/CraftDetailsPage";
       },
       {
         path:'/card/:id',
-        element:<CraftDetailsPage></CraftDetailsPage>
+        element:<CraftDetailsPage></CraftDetailsPage>,
+        loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/card/${params.id}`)
       },
         {
         path:"/login",
