@@ -22,7 +22,7 @@ const Navbar = () => {
               <div>All Art & craft Items</div>
             </li>
             <li>
-              <div>Add Craft Item</div>
+              <Link to='/addCraftItem'>Add Craft Item</Link>
             </li>
             <li>
               <Link to= '/register'>Register</Link>
