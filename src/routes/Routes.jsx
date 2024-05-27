@@ -8,10 +8,12 @@ import Login from "../pages/Authentication/Login";
 import Register from "../pages/Authentication/Register";
 import AddCraftItem from "../pages/AddCraftItem";
 import CraftDetailsPage from "../pages/CraftDetailsPage";
+import Error from "../pages/Error";
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<Error></Error>,
       children:[
         {
         path:"/",
