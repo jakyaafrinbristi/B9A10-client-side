@@ -19,7 +19,10 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <div>All Art & craft Items</div>
+              <Link to='/allArtCraftItems'>All Art & craft Items</Link>
+            </li>
+            <li>
+              <Link to='/myArtAndCraft'>My Art & craft list</Link>
             </li>
             <li>
               <Link to='/addCraftItem'>Add Craft Item</Link>
