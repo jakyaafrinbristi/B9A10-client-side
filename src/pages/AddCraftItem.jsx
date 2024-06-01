@@ -1,12 +1,18 @@
 import Lottie from "lottie-react";
 import Swal from 'sweetalert2'
 import form from "../json/form.json";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 const AddCraftItem = () => {
+    const { user } = useContext(AuthContext)
+    console.log(user)
     const craftHandler = e=>{
         e.preventDefault();
         const form =e.target;
-        const name =form.name.value;
-        const email=form.email.value;
+        // const name =form.name.value;
+        const name =user.displayName;
+        // const email=form.email.value;
+        const email=user.email;
         const item_name=form.item_name.value;
         const subcategory_Name=form.subcategory_Name.value;
         const price =form.price.value;

@@ -35,7 +35,8 @@ import AllArtCraftItems from "../pages/AllArtCraftItems";
     
       {
         path:"/myArtAndCraft",
-        element:<MyArtAndCraft></MyArtAndCraft>
+        element:<MyArtAndCraft></MyArtAndCraft>,
+  
       },
    
         {
