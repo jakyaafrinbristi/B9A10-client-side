@@ -1,4 +1,6 @@
 import { useLoaderData } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
+import { FaStarHalf } from "react-icons/fa";
 
 
 const CraftDetailsPage = () => {
@@ -18,9 +20,14 @@ const CraftDetailsPage = () => {
             <p className=" font-semibold">{description}</p>
             <p className="font-semibold">Price:{price}</p>
             <p className="font-semibold">processing_time:{processing}</p>
-            <p className="font-semibold">processing_time:{customization}</p>
-            <p className="font-semibold">Customization:{stock}</p>
-            <p className="font-semibold">rating:{rating}</p>
+            <p className="font-semibold">Customization:{customization}</p>
+            <p className="font-semibold">Stock:{stock}</p>
+            <p className="font-semibold flex gap-5 items-center">rating:{rating}
+            <span className="text-yellow-200 flex"> <FaStar />
+            <FaStar /><FaStar /><FaStar /><FaStarHalf />
+</span>
+
+             </p>
             
        
 

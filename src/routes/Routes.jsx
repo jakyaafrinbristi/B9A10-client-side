@@ -13,6 +13,7 @@ import MyArtAndCraft from "../pages/MyArtAndCraft";
 import AllArtCraftItems from "../pages/AllArtCraftItems";
 import Update from "../pages/Update";
 import ArtDetails from "../pages/ArtDetails";
+import PrivateRoute from "./PrivateRoute";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -31,12 +32,12 @@ import ArtDetails from "../pages/ArtDetails";
       },
       {
         path:'/craft/:id',
-        element:<ArtDetails></ArtDetails>,
+        element:<PrivateRoute><ArtDetails></ArtDetails></PrivateRoute>,
         loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/craft/${params.id}`)
       },
       {
         path:'/card/:id',
-        element:<CraftDetailsPage></CraftDetailsPage>,
+        element:<PrivateRoute><CraftDetailsPage></CraftDetailsPage></PrivateRoute>,
         loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/card/${params.id}`)
       },
       {
@@ -48,12 +49,12 @@ import ArtDetails from "../pages/ArtDetails";
     
       {
         path:"/myArtAndCraft",
-        element:<MyArtAndCraft></MyArtAndCraft>,
+        element:<PrivateRoute><MyArtAndCraft></MyArtAndCraft></PrivateRoute>,
   
       },
       {
         path:'/update/:id',
-        element:<Update></Update>,
+        element:<PrivateRoute><Update></Update></PrivateRoute>,
         loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/card/${params.id}`)
       },
    
@@ -67,7 +68,7 @@ import ArtDetails from "../pages/ArtDetails";
       },
         {
         path:"/addCraftItem",
-        element:<AddCraftItem></AddCraftItem>
+        element:<PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>
       },
     ]
     },

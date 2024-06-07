@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import { FaGithub } from "react-icons/fa6";
 import Lottie from "lottie-react";
 // import login from "../../../public/login.json"
@@ -6,6 +6,7 @@ import login from "../../json/login.json";
 import logo from "../../assets/images/logo.jpg"
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Tooltip } from 'react-tooltip'
 import toast from "react-hot-toast";
 
 
@@ -14,15 +15,17 @@ import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate =useNavigate()
+  const location =useLocation()
   const { signIn,
     signInWithGoogle}=useContext(AuthContext);
+    const from =location.state || '/'
 
 
   // goggle signIn
   const handleGoggleSign = async() =>{
     try {
       await signInWithGoogle()
-      navigate('/')
+      navigate(from, { replace:true })
       toast.success('Successfully Login')
 
     }
@@ -43,7 +46,7 @@ const Login = () => {
     try{
         const result =await signIn(email,password)
         console.log(result)
-        navigate('/')
+        navigate(from, { replace:true })
         toast.success('signIn successfully')
 
     }

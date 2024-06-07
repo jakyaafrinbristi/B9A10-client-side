@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { Tooltip } from 'react-tooltip'
 
 
 
@@ -15,10 +16,10 @@ const AllArtCraftItems = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>SubCategory Name</th>
-              <th>Item Name</th>
-              <th>Processing</th>
+              <th className="font-bold text-red-900 ">Name</th>
+              <th  className="font-bold text-red-900 ">SubCategory Name</th>
+              <th  className="font-bold text-red-900 ">Item Name</th>
+              <th  className="font-bold text-red-900 ">Processing</th>
               <th></th>
             </tr>
           </thead>
@@ -26,16 +27,20 @@ const AllArtCraftItems = () => {
             {/* row 1 */}
             {
               tablesItem.map((table,index) => <tr key={table._id}>
-                <th>{index+1}</th>
-                <td>{table.name}</td>
-                <td>{table.
+                <th >{index+1}</th>
+                <td className="text-rose-500">{table.name}</td>
+                <td className="text-blue-600">{table.
                   subcategory_Name}</td>
-                <td>{table.item_name}</td>
-                <td>{table.processing}</td>
+                <td className="text-red-500">{table.item_name}</td>
+                <td className="text-green-600">{table.processing}</td>
                 <th>
                 <Link to={`/card/${table._id}`} >
-                   <button className="btn btn-ghost btn-xs">View details</button>
+                   <button className="btn btn-xs bg-purple-100 text-purple-800 hover:bg-purple-50" id="button">View details</button>
                    </Link>
+        <Tooltip anchorSelect="#button">
+          <p >click me</p>
+          </Tooltip>
+
                
                 </th>
               </tr>)

@@ -14,6 +14,7 @@ import Slide from './Slide';
 import bgImg1 from '../assets/images/carousel-1.jpg'
 import bgImg2 from '../assets/images/carousel-2.jpg'
 import bgImg3 from '../assets/images/carousel-3.jpg'
+import { Fade } from "react-awesome-reveal";
 
 
 export default function Carousel() {
@@ -35,7 +36,8 @@ export default function Carousel() {
         className="mySwiper"
       >
         <SwiperSlide>
-           <Slide image={bgImg1} text='Unleash Your Creative Potential with Art from Around the Globe'/>
+           <Slide image={bgImg1} 
+           text='Unleash Your Creative Potential with Art from Around the Globe'/>
               </SwiperSlide>
         <SwiperSlide>
            <Slide image={bgImg2} text='Unleash Your Creative Potential with Art from Around the Globe'/>

@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
+import { FaStarHalf } from "react-icons/fa";
 
 const ArtCard = ({ craft }) => {
-    const {_id, subcategory_name, image, item_name, short_description, price, rating, processing_time } = craft || {}
+    const { _id, subcategory_name, image, item_name, short_description, price, rating, processing_time } = craft || {}
     return (
         <div>
             <div className="card w-full h-[80%] bg-base-100 shadow-xl space-y-5">
@@ -17,7 +19,12 @@ const ArtCard = ({ craft }) => {
                         <p className="font-semibold">Processing time:{processing_time}</p>
                     </div>
 
-                    <p className="font-semibold">Rating:{rating}</p>
+                    <p className="font-semibold flex gap-5 items-center">rating:{rating}
+                        <span className="text-yellow-200 flex"> <FaStar />
+                            <FaStar /><FaStar /><FaStar /><FaStarHalf />
+                        </span>
+
+                    </p>
                     <div>      <Link to={`/craft/${_id}`} className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
                         <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
                         <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">

@@ -1,9 +1,13 @@
 import { useLoaderData } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
+import { FaStarHalf } from "react-icons/fa";
+
 
 
 const ArtDetails = () => {
     const craft=useLoaderData();
     const {subcategory_name,price,item_name,rating,processing_time,image,short_description}= craft || {};
+    
 
     return (
         <div className="container px-8 py-10 mx-auto ">
@@ -20,7 +24,12 @@ const ArtDetails = () => {
              <p className="font-semibold ">{short_description}</p>
              <p className="font-semibold">Price:{price}</p>
              <p className="font-semibold">processing:{processing_time}</p>
-             <p className="font-semibold">rating:{rating}</p>
+             <p className="font-semibold flex items-center gap-5">rating:{rating}
+            <span className="text-yellow-200 flex"> <FaStar />
+            <FaStar /><FaStar /><FaStar /><FaStarHalf />
+</span>
+
+             </p>
              
         
  
