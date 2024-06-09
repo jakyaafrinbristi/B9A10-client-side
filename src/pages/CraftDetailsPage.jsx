@@ -1,6 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 
 const CraftDetailsPage = () => {
@@ -12,6 +13,7 @@ const CraftDetailsPage = () => {
        <div className="  flex-row lg:flex gap-9">
        <div className="lg:w-[50%]">
         <img className="w-full h-full" src={image} alt="" />
+    <Link to = '/' ><button className="border mt-5 rounded-full px-5 py-2"> <FaArrowLeftLong /></button></Link>
         </div>
         <div className="lg:w-[50%] space-y-4 flex flex-col justify-center">
             <p className="text-center text-2xl font-bold ">{subcategory_Name}</p>
