@@ -35,12 +35,9 @@ const AllArtCraftItems = () => {
                 <td className="text-green-600">{table.processing}</td>
                 <th>
                 <Link to={`/card/${table._id}`} >
-                   <button className="btn btn-xs bg-purple-100 text-purple-800 hover:bg-purple-50" id="button">View details</button>
+                   <button className="btn btn-xs bg-purple-100 text-purple-800 hover:bg-purple-50" >View details</button>
                    </Link>
-        <Tooltip anchorSelect="#button">
-          <p >click me</p>
-          </Tooltip>
-
+       
                
                 </th>
               </tr>)

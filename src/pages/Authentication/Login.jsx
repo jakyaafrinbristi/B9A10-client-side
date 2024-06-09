@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { FaGithub } from "react-icons/fa6";
+import { GrTwitter } from "react-icons/gr";
 import Lottie from "lottie-react";
 // import login from "../../../public/login.json"
 import login from "../../json/login.json";
@@ -17,7 +18,7 @@ const Login = () => {
   const navigate =useNavigate()
   const location =useLocation()
   const { signIn,
-    signInWithGoogle}=useContext(AuthContext);
+    signInWithGoogle,signInWithGithub}=useContext(AuthContext);
     const from =location.state || '/'
 
 
@@ -36,6 +37,22 @@ const Login = () => {
     }
 
   }
+  // github login
+  const handleGithubSign = async() =>{
+    try {
+      await signInWithGithub()
+      navigate(from, { replace:true })
+      toast.success('Successfully Login')
+
+    }
+    catch(error){
+      console.log(error)
+      toast.error("Incorrect...Please logIn again")
+
+    }
+
+  }
+
   // email,pass
   const handleSIgnIn = async e =>{
     e.preventDefault()
@@ -108,6 +125,15 @@ const Login = () => {
             </span>
           </div>
           <div className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
+            <div className='px-4 py-2'>
+            <GrTwitter />
+            </div>
+
+            <span className='w-5/6 px-4 py-3 font-bold text-center'>
+              Sign in with Twitter
+            </span>
+          </div>
+          <div onClick={ handleGithubSign} className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
             <div className='px-4 py-2'>
               <FaGithub />
             </div>

@@ -17,7 +17,7 @@ const MyArtDetailsPage = ({ item ,items,setItems}) => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(`http://localhost:9000/card/${_id}`,{
+            fetch(`${import.meta.env.VITE_API_URL}/card/${_id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())

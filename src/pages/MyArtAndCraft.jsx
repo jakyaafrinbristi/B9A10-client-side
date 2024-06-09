@@ -7,7 +7,8 @@ const MyArtAndCraft = () => {
     const { user } = useContext(AuthContext)
     const [items,setItems ] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:9000/cards/${user?.email}`)
+    
+        fetch(`${import.meta.env.VITE_API_URL}/cards/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItems(data)

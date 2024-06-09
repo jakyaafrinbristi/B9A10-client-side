@@ -39,7 +39,7 @@ const Update = () => {
                     title: 'Success!',
                     text: 'Craft Item Updated Successfully',
                     icon: 'success',
-                    confirmButtonText: 'Cool'
+                    confirmButtonText: 'Ok'
                   })
 
             }

@@ -90,7 +90,7 @@ const Navbar = () => {
           <NavLink to='/login'
 
             className={({ isActive }) =>
-              isActive ? '  font-bold  underline text-red-500' : 'font-semibold '
+              isActive ? '  font-bold  underline text-blue-500' : 'font-semibold '
             } id="login">Login</NavLink>
 
 
@@ -147,4 +147,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

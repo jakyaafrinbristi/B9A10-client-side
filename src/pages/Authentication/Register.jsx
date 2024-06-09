@@ -14,7 +14,7 @@ const Register = () => {
 
   const navigate = useNavigate()
   const location =useLocation()
-  const { createUser, signInWithGoogle, user, setUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, signInWithGoogle,signInWithGithub ,user, setUser, updateUserProfile } = useContext(AuthContext);
       const from =location.state || '/'
   // create user
   const handleSIgnUp = async e => {
@@ -72,6 +72,21 @@ const Register = () => {
 
     }
   }
+  // github login
+  const handleGithubSign = async() =>{
+    try {
+      await signInWithGithub()
+      navigate(from, { replace:true })
+      toast.success('Successfully Login')
+
+    }
+    catch(error){
+      console.log(error)
+      toast.error("Incorrect...Please logIn again")
+
+    }
+
+  }
   return (
     <div className='flex justify-center items-center min-h-[calc(100vh-306px)] mt-12 gap-6'>
       <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
@@ -114,7 +129,7 @@ const Register = () => {
               Sign in with Google
             </span>
           </div>
-          <div className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
+          <div onClick={handleGithubSign} className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
             <div className='px-4 py-2'>
               <FaGithub />
             </div>

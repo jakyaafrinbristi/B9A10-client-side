@@ -1,8 +1,12 @@
-# React + Vite
+- website name:DeviantArt
+- category name:Painting and Drawing
+- liveSite Url:
+-serverSite Url:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+- **User Authentication**: Secure login, registration, and profile update functionality using modern techniques.
+- **Lottie Animations**: Enhanced user experience with engaging Lottie animations across various pages including login, registration, and item addition.
+- **Tailwind CSS Buttons**: Stylish and responsive buttons for the craft item section, ensuring a smooth and visually appealing user interaction.
+- **Craft Item Management**: Easily add, update, and manage your craft items, specifically tailored for painting and drawing enthusiasts.
+- **Tooltips and Navigation**: User-friendly navigation with React Tooltip, making it easy to find and understand the features of our site.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
