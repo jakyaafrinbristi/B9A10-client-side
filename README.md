@@ -1,7 +1,7 @@
 - website name:DeviantArt
 - category name:Painting and Drawing
-- liveSite Url:
--serverSite Url:
+- liveSite Url:https://art-craft-project-e36fd.web.app
+- serverSite Url:https://b9-a10-server-side-sage.vercel.app
 
 
 - **User Authentication**: Secure login, registration, and profile update functionality using modern techniques.
